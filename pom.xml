@@ -6,7 +6,7 @@
   
   <properties>
         <jdk.version>1.8</jdk.version>
-        <spark.version>2.5.4</spark.version>
+        <spark.version>2.7.2</spark.version>
         <commons.beanutils.version>1.9.3</commons.beanutils.version>
         <spark.freemarker.version>2.3</spark.freemarker.version>
         <freemarker.version>2.3.25-incubating</freemarker.version>
