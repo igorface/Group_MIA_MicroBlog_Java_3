@@ -9,7 +9,7 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <sparkcore.version>2.7.2</spark-core.version>
+        <sparkcore.version>2.7.2</sparkcore.version>
         <sparkfreemaker.version>2.7.1</sparkfreemaker.version>
         <freemarker.version>2.3.28</freemarker.version>
         <spring.version>4.3.8.RELEASE</spring.version>
@@ -20,7 +20,7 @@
         <orm.version>4.3.8.RELEASE</orm.version>
         <apache.version>2.1.1</apache.version>
         <mindrot.version>0.4</mindrot.version>
-        <beanutils.version>1.9.2<beanutils.version>
+        <beanutils.version>1.9.2</beanutils.version>
     </properties>
 
 
