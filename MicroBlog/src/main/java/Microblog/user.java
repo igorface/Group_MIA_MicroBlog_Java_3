@@ -1,3 +1,4 @@
+package Microblog;
 @Entity
 
 @Table (name = "user")

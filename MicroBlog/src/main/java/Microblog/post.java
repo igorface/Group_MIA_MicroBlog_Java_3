@@ -1,3 +1,4 @@
+package Microblog;
 import java.util.Date;
 
 @Entity
