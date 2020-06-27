@@ -13,5 +13,4 @@ public class post {
 
 	@Column (name = "text", nullable = false)
 	private String text;
-
 }

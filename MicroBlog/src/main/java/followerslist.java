@@ -9,4 +9,4 @@ public class followerslist {
 	@Column (name = "follower_id", nullable = false)
 	private int follower_id;
 
-} a
+}

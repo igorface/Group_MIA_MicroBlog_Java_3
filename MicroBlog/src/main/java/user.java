@@ -14,4 +14,4 @@ public class user {
 
 	@Column (name = "email", nullable = false)
 	private String emails;
-}   a
+}
