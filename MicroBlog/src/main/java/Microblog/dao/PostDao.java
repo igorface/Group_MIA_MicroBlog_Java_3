@@ -1,4 +1,4 @@
-package MB.dao;
+package Microblog.dao;
 
 import java.util.List;
 
