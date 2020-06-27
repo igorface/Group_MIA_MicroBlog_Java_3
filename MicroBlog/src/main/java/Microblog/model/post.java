@@ -1,4 +1,4 @@
-package Microblog;
+package Microblog.model;
 import java.util.Date;
 
 @Entity

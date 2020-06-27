@@ -1,4 +1,4 @@
-package Microblog;
+package Microblog.model;
 @Entity
 
 @Table (name = "followerslist")
