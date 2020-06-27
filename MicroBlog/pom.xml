@@ -12,7 +12,7 @@
         <sparkcore.version>2.7.2</sparkcore.version>
         <sparkfreemaker.version>2.7.1</sparkfreemaker.version>
         <freemarker.version>2.3.28</freemarker.version>
-        <spring.version>4.3.8.RELEASE</spring.version>
+        <spring.version>4.3.19.RELEASE</spring.version>
         <hsqldb.version>2.4.1</hsqldb.version>
         <hibernate.version>5.2.10.Final</hibernate.version>
         <entitymanager.version>5.2.10.Final</entitymanager.version>
