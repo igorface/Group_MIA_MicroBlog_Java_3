@@ -1,0 +1,9 @@
+Microblog\dao\UserDao.class
+Microblog\dao\impl\UserDaoImpl.class
+Microblog\dao\impl\PostDaoImpl.class
+Microblog\model\followerslist.class
+Microblog\dao\PostDao.class
+Microblog\dao\FollowersDao.class
+Microblog\dao\impl\FollowersDaoImpl.class
+Microblog\model\post.class
+Microblog\model\user.class
