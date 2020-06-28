@@ -10,9 +10,9 @@ import javax.persistence.Table;
 public class followerslist {
 
 	@Column (name = "user_id", nullable = false)
-	private int user_id;
+	public int user_id;
 	
 	@Column (name = "follower_id", nullable = false)
-	private int follower_id;
+	public int follower_id;
 
 }

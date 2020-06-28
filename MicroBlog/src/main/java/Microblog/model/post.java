@@ -11,11 +11,11 @@ import javax.persistence.Table;
 
 public class post {
 	@Column (name = "user_id", nullable = false)
-	private int user_id;
+	public int user_id;
 
 	@Column (name="date_added", nullable = false)
-	private Date date_added;
+	public Date date_added;
 
 	@Column (name = "text", nullable = false)
-	private String text;
+	public String text;
 }
