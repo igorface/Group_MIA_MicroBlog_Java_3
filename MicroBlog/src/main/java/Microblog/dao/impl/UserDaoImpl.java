@@ -1,4 +1,4 @@
-package src.main.java.Microblog.dao.impl;
+package Microblog.dao.impl;
 
 public class UserDaoImpl {
 
