@@ -2,9 +2,9 @@ package Microblog.dao;
 
 import java.util.List;
 
-import MicroBlog.model.post;
-import MicroBlog.model.user;
-import MicroBlog.model.followerslist;
+import Microblog.model.post;
+import Microblog.model.user;
+import Microblog.model.followerslist;
 
 public interface PostDao {
 	List<post> retriveUserIdPost(user User_id);
