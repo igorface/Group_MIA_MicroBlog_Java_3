@@ -1,12 +1,11 @@
 package Microblog.dao.impl;
 
-import java.util.List;
+import java.util.*;
 
 import javax.persistence.*;
 
-import Microblog.dao.PostDao;
-import Microblog.model.post;
-import Microblog.model.user;
+import Microblog.dao.*;
+import Microblog.model.*;
 
 public class PostDaoImpl implements PostDao{
 
