@@ -18,8 +18,5 @@ public class user {
 
 	@Column (name = "email", nullable = false)
 	public String emails;
-	
-	public static String getId() {
-		return "";
-	};
+
 }
