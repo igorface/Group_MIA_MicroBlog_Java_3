@@ -10,7 +10,7 @@ public interface FollowersDao {
 
 	followerslist addFollower(user ownerid, user userid);
 	
-	void deleteFollower(user ownerid, user userid);
+	int deleteFollower(user ownerid, user userid);
 	
 	boolean isFollowing(user ownerid, user userid);
 	

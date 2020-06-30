@@ -29,7 +29,7 @@ public class FollowersDaoImpl implements FollowersDao{
     }
 
 	@Override
-	public void deleteFollower(user ownerid, user userid) {
+	public int deleteFollower(user ownerid, user userid) {
         if (this.isFollowing(ownerid, userid)) {
             String hql = "DELETE FROM followerslist "
                     + "WHERE user_id = :user_id "
