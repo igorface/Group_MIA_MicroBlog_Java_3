@@ -7,13 +7,11 @@ import Microblog.model.user;
 import Microblog.model.followerslist;
 
 public interface PostDao {
-	List<post> retriveUserIdPost(user User_id);
+	List<post> retriveUserIdPost(user User);
 	
-	List<post> retriveSpecificUsersPosts(user User_id);
+	List<post> retriveFollowedUsersPosts(user User);
 	
-	List<post> retriveFollowedUsersPosts(user User_id);
+	List<post> retriveAllUsersPosts(user User);
 	
-	List<post> retriveAllUsersPosts(user User_id);
-	
-	void createPost(post Post);
+	void createPost(user User, post Post);
 }
