@@ -40,5 +40,9 @@ package structure -->
 	<bean id= "transactionManager" class= "org.springframework.orm.jpa.JpaTransactionManager" >
 		<property name= "entityManagerFactory" ref= "entityManagerFactoryBean" />
 	</bean>
+
+	<bean id="UserDao" class="Microblog.dao.impl.UserDaoImpl"/>
+	<bean id="PostDao" class="Microblog.dao.impl.PostDaoImpl"/>
+	<bean id="FollowersDao" class="Microblog.dao.impl.FollowersDaoImpl"/>
 	
 </beans>
