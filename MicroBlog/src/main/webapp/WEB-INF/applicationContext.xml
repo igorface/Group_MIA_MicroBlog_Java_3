@@ -18,10 +18,9 @@ package structure -->
 	</bean>
 	
 	<tx:annotation-driven />
-	
 	<bean id= "entityManagerFactoryBean" class= "org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" >
 		<property name= "dataSource" ref= "dataSource" />
-		<property name= "packagesToScan" value= "MicroBlog" />
+		<property name= "packagesToScan" value= "MicroBlog.model" />
 		<property name= "jpaVendorAdapter" >
 			<bean class= "org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" >
 				<property name= "showSql" value= "false" />

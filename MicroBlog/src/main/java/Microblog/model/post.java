@@ -1,15 +1,16 @@
 package Microblog.model;
-import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import java.util.*;
+import javax.persistence.*;
 
 @Entity
 
 @Table (name="post")
-
 public class post {
+
+	@PersistenceContext
+	EntityManager entityManager ;
+
 	@Column (name = "user_id", nullable = false)
 	public int user_id;
 
