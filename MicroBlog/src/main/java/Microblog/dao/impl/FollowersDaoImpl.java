@@ -35,8 +35,8 @@ public class FollowersDaoImpl implements FollowersDao{
                     + "WHERE user_id = :user_id "
                     + "AND follower_id = :follower_id";
             Query query = entityManager.createQuery(hql)
-                    .setParameter("user_id", ownerid.getUserId())
-                    .setParameter("follower_id", userid.getUserId());
+                    .setParameter("user_id", ownerid.user_id)
+                    .setParameter("follower_id", userid.user_id);
 
             return query.executeUpdate();
         }
@@ -50,8 +50,8 @@ public class FollowersDaoImpl implements FollowersDao{
                 + "WHERE user_id = :user_id "
                 + "AND follower_id = :follower_id";
         Query query = entityManager.createQuery(hql)
-                .setParameter("user_id", ownerid.getUserId())
-                .setParameter("follower_id", userid.getUserId());
+                .setParameter("user_id", ownerid.user_id)
+                .setParameter("follower_id", userid.user_id);
         try {
             UserDao followerFollowee = (UserDao) query.getSingleResult();
             return followerFollowee.getUserId() != null;

@@ -17,8 +17,7 @@ public class UserDaoImpl implements UserDao {
 	    	
 	    	Query query = entityManager.createQuery(hql);
 	    	
-	    	user result ​=​ query​.getSingleResult();
-	    			
+	    	user result = (user) query.getSingleResult();
 	    	return result;
 	    }
 	    
@@ -27,11 +26,7 @@ public class UserDaoImpl implements UserDao {
 	    	String hql = "insert into user (username, userpassword, email) values (:username, :userpassword, :email)";
 					
 			Query query = entityManager.createQuery(hql);
-	    	
-	    	int result ​=​ query​.​executeUpdate​();
-	    	
-			return result;
-	    	
+			query.executeUpdate();
 	    }
 	}
 
