@@ -1,45 +1,63 @@
 package Microblog.dao.impl;
 
-import Microblog.dao.FollowersDao;
-import Microblog.model.user;
+import java.util.*;
 
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import javax.persistence.*;
+import javax.transaction.Transactional;
+
+import Microblog.dao.*;
+import Microblog.model.*;
 
 public class FollowersDaoImpl implements FollowersDao{
-
-	private NamedParameterJdbcTemplate template;
-	@Override
-	public void addFollower(user ownerid, user userid) {
-		Map<String, Object> params = new HashMap<String, Object>();
-        params.put("follower", ownerid.getId());
-        params.put("followee", userid.getId());
-        
-		String hql = "insert into followerslist (follower_id, user_id) values (:ownerid, :userid)";
-		
-        template.update(hql,  params);
-
-    @Override
-	public void deleteFollower(user ownerid, user userid) {
-		Map<String, Object> params = new HashMap<String, Object>();
-        params.put("follower", ownerid.getId());
-        params.put("followee", userid.getId());
-        
-		String hql = "delete from followerslist (follower_id, user_id) values (:ownerid, :userid)";
-		
-        template.update(hql,  params);
-
-
-    @Override
-	public void addFollower(user ownerid, user userid) {
-		Map<String, Object> params = new HashMap<String, Object>();
-        params.put("follower", ownerid.getId());
-        params.put("followee", userid.getId());
-        
-		String sql = "select count(1) from followerslist where " +
-            "followerslist.ownerid = :follower and followerslist.userid = :followee";
-		
-		Long l = template.queryForObject(sql, params, Long.class);
-		
-		return l > 0;
 	
+	@PersistenceContext
+	EntityManager entityManager ;
+	
+	@Override
+	public followerslist addFollower(user ownerid, user userid) {
+        if (!this.isFollowing(ownerid, userid)) {
+            followerslist followerObject = new followerslist();
+            followerObject
+                    .setUserId(ownerid)
+                    .setFolloweeId(userid);
+            entityManager.persist(followerObject);
+
+            return followerObject;
+        }
+
+        return null;
+    }
+
+	@Override
+	public void deleteFollower(user ownerid, user userid) {
+        if (this.isFollowing(ownerid, userid)) {
+            String hql = "DELETE FROM followerslist "
+                    + "WHERE user_id = :user_id "
+                    + "AND follower_id = :follower_id";
+            Query query = entityManager.createQuery(hql)
+                    .setParameter("user_id", ownerid.getUserId())
+                    .setParameter("follower_id", userid.getUserId());
+
+            return query.executeUpdate();
+        }
+
+        return 0;
+    }
+
+	@Override
+	public boolean isFollowing(user ownerid, user userid) {
+		String hql = "FROM followerslist "
+                + "WHERE user_id = :user_id "
+                + "AND follower_id = :follower_id";
+        Query query = entityManager.createQuery(hql)
+                .setParameter("user_id", ownerid.getUserId())
+                .setParameter("follower_id", userid.getUserId());
+        try {
+            UserDao followerFollowee = (UserDao) query.getSingleResult();
+            return followerFollowee.getUserId() != null;
+        } catch (javax.persistence.NoResultException exception) {
+            return false;
+        }
+		
+	}
 }
