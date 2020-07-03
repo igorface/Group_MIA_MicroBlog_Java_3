@@ -12,8 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import MicroBlog.dao.*;
-import MicroBlog.model.*;
+import Microblog.dao.*;
+import Microblog.model.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:applicationContext-test.xml"})
@@ -24,7 +24,7 @@ public class TestUserDao {
     @Autowired
     UserDao	userDAO; 
 
-    User newUser;
+    user newUser;
 
     @Before
     public void setUp() {
@@ -33,6 +33,5 @@ public class TestUserDao {
     	
     }
 
-    
     
 }
