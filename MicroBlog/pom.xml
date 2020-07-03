@@ -20,7 +20,7 @@
         <orm.version>4.3.8.RELEASE</orm.version>
         <apache.version>2.1.1</apache.version>
         <mindrot.version>0.4</mindrot.version>
-        <beanutils.version>1.9.2</beanutils.version>
+        <beanutils.version>1.9.4</beanutils.version>
         <maven.compiler.source>1.8</maven.compiler.source>
  		<maven.compiler.target>1.8</maven.compiler.target>
  		<spring-test.version>4.3.8.RELEASE</spring-test.version>
