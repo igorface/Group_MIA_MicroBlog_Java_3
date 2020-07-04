@@ -21,7 +21,7 @@ public interface MicroblogService {
 	List<post> retriveAllUsersPosts(user User);
 	
 	//followers
-	followerslist addFollower(user ownerid, user userid);
+	void addFollower(user ownerid, user userid);
 	
 	int deleteFollower(user ownerid, user userid);
 	
