@@ -1,6 +1,7 @@
 package Microblog.dao;
 
 import static org.junit.Assert.assertFalse;
+import java.util.*;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -31,22 +32,44 @@ public class TestPostDao {
 
     user User;
  
+    Date DateAdded;
+    
     @Before
     public void setUp () {
-        this.postDAO = new user();
-        this.postDAO.user_id = 1;
-        this.postDAO.email = "add@me.com";
-        this.postDAO.userpassword = "mypass";
-        this.postDAO.username = "Me";
+        this.User = new user();
+        this.User.user_id = 1;
+        this.User.email = "add@me.com";
+        this.User.userpassword = "mypass";
+        this.User.username = "Me";
 
-        this.userDAO = new user();
-        this.userDAO.user_id = 2;
-        this.userDAO.email = "illfollow@you.com";
-        this.userDAO.userpassword = "mypasstoo";
-        this.userDAO.username = "You";
+        DateAdded = new Date(44000);
+        
+        this.TestPost = new post();
+        this.TestPost.user_id = 2;
+        this.TestPost.text = "illfollow@you.com";
+        this.TestPost.date_added= DateAdded;
     }
 	
-	
+    @Test
+    public List<post> retriveUserIdPost() {
+    	return postDAO.retriveUserIdPost(User);
+    }
+
+    @Test
+    public List<post> retriveFollowedUsersPosts() {
+    	return postDAO.retriveFollowedUsersPosts(User);
+    }
+    
+    @Test
+    public List<post> retriveAllUsersPosts() {
+    	return postDAO.retriveAllUsersPosts(User);
+    }
+    
+    @Test
+    public void createPost() {
+    	postDAO.createPost(User, TestPost);
+    }
+    
 }
 
 
