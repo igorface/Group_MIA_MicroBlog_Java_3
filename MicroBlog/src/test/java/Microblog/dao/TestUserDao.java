@@ -26,28 +26,25 @@ public class TestUserDao {
 
     user newUser;
     
-    user newFollowee;
-
-    user newFollower;
+    String username;
 
     @Before
     public void setUp () {
-        this.newFollower = new user();
-        this.newFollower.user_id = 1;
-        this.newFollower.email = "add@me.com";
-        this.newFollower.userpassword = "mypass";
-        this.newFollower.username = "Me";
+        this.newUser = new user();
+        this.newUser.user_id = 1;
+        this.newUser.email = "add@me.com";
+        this.newUser.userpassword = "mypass";
+        this.newUser.username = "Me";
 
-        this.newFollowee = new user();
-        this.newFollowee.user_id = 2;
-        this.newFollowee.email = "illfollow@you.com";
-        this.newFollowee.userpassword = "mypasstoo";
-        this.newFollowee.username = "You";
+        this.username = "Me";
     }
     @Test
     public void registerNewUser() {
-    	return userDAO.registerNewUser(newUser);
+    	userDAO.registerNewUser(newUser);
     }
-    
+    @Test
+    public user getUserByLogin() {
+    	return userDAO.getUserByLogin(username);
+    }
     
 }
