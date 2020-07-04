@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Microblog.dao.*;
+import Microblog.dao.impl.PostDaoImpl;
 import Microblog.model.*;
 import Microblog.service.MicroblogService;
 
@@ -16,7 +17,7 @@ public class MicroblogServiceImpl implements MicroblogService {
 	UserDao userDAO;
 	
 	@Autowired
-	PostDao postDAO;
+	PostDaoImpl postDAO;
 	
 	@Autowired
 	FollowersDao followersDAO;
@@ -24,42 +25,42 @@ public class MicroblogServiceImpl implements MicroblogService {
 	
 	@Override
 	public List<post> retriveUserIdPost(user User) {
-		return PostDao.retriveUserIdPost(User);
+		return postDAO.retriveUserIdPost(User);
 	}
 
 	@Override
 	public List<post> retriveFollowedUsersPosts(user User) {
-		// TODO 
+		return postDAO.retriveFollowedUsersPosts(User);
 	}
 
 	@Override
 	public List<post> retriveAllUsersPosts(user User) {
-		// TODO 
+		return postDAO.retriveAllUsersPosts(User);
 	}
 
 	@Override
 	public followerslist addFollower(user ownerid, user userid) {
-		// TODO 
+		return followersDAO.addFollower(ownerid, userid);	
 	}
 
 	@Override
 	public int deleteFollower(user ownerid, user userid) {
-		// TODO 
+		return followersDAO.deleteFollower(ownerid, userid);
 	}
 
 	@Override
 	public boolean isFollowing(user ownerid, user userid) {
-		// TODO 
+		return followersDAO.isFollowing(ownerid, userid);
 	}
 
 	@Override
 	public user getUserByLogin(String username) {
-		// TODO 
+		return userDAO.getUserByLogin(username);
 	}
 
 	@Override
 	public void registerNewUser(user newuser) {
-		// TODO 
+		userDAO.registerNewUser(newuser);
 		
 	}
 	
