@@ -39,8 +39,8 @@ public class MicroblogServiceImpl implements MicroblogService {
 	}
 
 	@Override
-	public followerslist addFollower(user ownerid, user userid) {
-		return followersDAO.addFollower(ownerid, userid);	
+	public void addFollower(user ownerid, user userid) {
+		followersDAO.addFollower(ownerid, userid);	
 	}
 
 	@Override
