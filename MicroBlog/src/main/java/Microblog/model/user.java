@@ -17,6 +17,6 @@ public class user {
 	public String userpassword;
 
 	@Column (name = "email", nullable = false)
-	public String emails;
+	public String email;
 
 }

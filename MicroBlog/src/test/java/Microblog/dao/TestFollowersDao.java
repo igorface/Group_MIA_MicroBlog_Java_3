@@ -26,28 +26,41 @@ public class TestFollowersDao {
 	    @Autowired
 	    UserDao userDAO;
 	    
-	    //folowee
 	    user newFollowee;
-	    //follower;
+
 	    user newFollower;
 	    
 	    @Before
 	    public void setUp () {
-	    
-	    	// something goes here
-	    
+	        this.newFollower = new user();
+	        this.newFollower.user_id = 1;
+	        this.newFollower.email = "add@me.com";
+	        this.newFollower.userpassword = "mypass";
+	        this.newFollower.username = "Me";
+
+	        this.newFollowee = new user();
+	        this.newFollowee.user_id = 2;
+	        this.newFollowee.email = "illfollow@you.com";
+	        this.newFollowee.userpassword = "mypasstoo";
+	        this.newFollowee.username = "You";
 	    }
 	    
 	    @Test
-	    
-	    public void testAddFollower () {
-	    	
-	    	// something goes here
+	    public boolean isFollowing() {
+	    	return followerDAO.isFollowing(newFollowee, newFollower);
 	    }
-   
 
-   
-    
+	    @Test
+	    public void testAddFollower () {
+	    	followerDAO.addFollower(newFollowee, newFollower);
+	    }
+
+	    @Test
+	    public void deleteFollower () {
+	    	followerDAO.deleteFollower(newFollowee, newFollower);
+	    }
+	    
+	    
     }
 
 
