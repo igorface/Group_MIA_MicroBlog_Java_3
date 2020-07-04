@@ -4,7 +4,7 @@ import Microblog.model.*;
 
 public interface FollowersDao {
 
-	followerslist addFollower(user ownerid, user userid);
+	void addFollower(user ownerid, user userid);
 	
 	int deleteFollower(user ownerid, user userid);
 	

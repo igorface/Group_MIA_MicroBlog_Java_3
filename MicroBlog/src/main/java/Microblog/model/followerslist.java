@@ -15,4 +15,5 @@ public class followerslist {
 	@Column (name = "follower_id", nullable = false)
 	public int follower_id;
 
+
 }

@@ -14,18 +14,14 @@ public class FollowersDaoImpl implements FollowersDao{
 	EntityManager entityManager ;
 	
 	@Override
-	public followerslist addFollower(user ownerid, user userid) {
+	public void addFollower(user ownerid, user userid) {
         if (!this.isFollowing(ownerid, userid)) {
-            followerslist followerObject = new followerslist();
-            followerObject
-                    .setUserId(ownerid)
-                    .setFolloweeId(userid);
-            entityManager.persist(followerObject);
-
-            return followerObject;
+            String hql = "insert into followerslist (user_id, follower_id) values ( :owner_id , :user_id)";
+            Query query = entityManager.createQuery(hql);
+            query.setParameter("owner_id", ownerid.user_id);
+            query.setParameter("user_id", userid.user_id);
+            query.executeUpdate();
         }
-
-        return null;
     }
 
 	@Override
@@ -54,7 +50,7 @@ public class FollowersDaoImpl implements FollowersDao{
                 .setParameter("follower_id", userid.user_id);
         try {
             UserDao followerFollowee = (UserDao) query.getSingleResult();
-            return followerFollowee.getUserId() != null;
+            return followerFollowee != null;
         } catch (javax.persistence.NoResultException exception) {
             return false;
         }
